@@ -4,9 +4,14 @@ import InviteLinkInput from "./InviteLinkInput"
 import Ranking from "./Ranking"
 import Stats from "./Stats"
 
-export default function Invite() {
+interface InvitePageProps {
+  params: Promise<{ subscribeId: string }>
+}
 
-  const initeLink = "https://devstage.com.br/evento/123456"
+export default async function InvitePage({ params }: InvitePageProps) {
+  const { subscribeId } = await params
+
+  const initeLink = `http://localhost:3333/invites/${subscribeId}`
 
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
