@@ -41,7 +41,7 @@ export default async function InvitePage({ params }: InvitePageProps) {
         </div>
 
         <InviteLinkInput inviteLink={initeLink} />
-        <Stats />
+        <Stats subscribeId={subscribeId} />
       </div>
 
       <Ranking />
